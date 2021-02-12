@@ -4,6 +4,7 @@ const form = document.getElementById('form')
 let montoGlobal = []
 let ahorroGlobal = []
 
+
 form.addEventListener('submit', (e)=>{
     e.preventDefault()
     sessionStorage.setItem('montoAhorro', form.monto.value)
@@ -19,7 +20,7 @@ form.addEventListener('submit', (e)=>{
     let montoAhorro = [];
     let montoTotal = [];
 
-    if (tipoSimulacion !== 1 && monto >= 50000){
+    if (tipoSimulacion !== '1' && monto >= 50000){
         montoGlobal = monto
         if(tipoSimulacion === "mensual"){
     
@@ -47,7 +48,7 @@ form.addEventListener('submit', (e)=>{
 
 
 function totalCaseChart(ctx){
-    const chart =  new Chart(ctx, {
+       const chart =  new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ["12 meses", '18 meses','24 meses', '36 meses ', '48 meses','60 meses'],
@@ -87,6 +88,9 @@ function totalCaseChart(ctx){
         }
         
     });
+    // setTimeout(() => {
+    //     chart.destroy();
+    // }, 3000);
  }
 
  function renderCharts(){
