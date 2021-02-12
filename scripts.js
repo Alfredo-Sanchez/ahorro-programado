@@ -48,7 +48,7 @@ form.addEventListener('submit', (e)=>{
 
 
 function totalCaseChart(ctx){
-       const chart =  new Chart(ctx, {
+        const chart =  new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ["12 meses", '18 meses','24 meses', '36 meses ', '48 meses','60 meses'],
@@ -90,10 +90,16 @@ function totalCaseChart(ctx){
     });
     // setTimeout(() => {
     //     chart.destroy();
-    // }, 3000);
+    // }, 10000);
  }
 
  function renderCharts(){
+         
+    document.getElementById('chart').remove();
+    let canvas = document.createElement("canvas")
+        canvas.setAttribute("id", 'chart')
+    document.getElementById('chartContent').appendChild(canvas)
+    
      const ctx = document.querySelector('#chart').getContext('2d')
      totalCaseChart(ctx);
  }
