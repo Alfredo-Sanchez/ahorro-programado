@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorro programado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="form" class="form">
+        <div class="form__field">
+            <label for="tipoSimulacion" class="form__label">Tipo de simulación</label>
+            <select name="tipoSimulacion" id="tipoSimulacion" class="form__select">
+                <option value="1" disabled selected>Elija una opción</option>
+                <option value="mensual">Ingresa el ahorro mensual</option>
+                <option value="total">Ingresa el ahorro total</option>
+            </select>
+        </div>
+
+        <div class="form__field">
+            <label for="monto" class="form__label">Monto</label>
+            <input type="number" name="monto" class="form__input" min="50000" max="5000000" id="monto">
+        </div>
+        <input type="submit" id="calcular" name="submit" class="form__submit" value="Calcular">
+    </form>
+
+
+    <div class="chart" id="chartContent">
+        <canvas id="chart" width="500" height="250"></canvas>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="scripts.js"></script>    
+</body>
+</html>

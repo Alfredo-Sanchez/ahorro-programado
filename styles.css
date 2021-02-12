@@ -1,0 +1,50 @@
+body{
+    background-color: #ddd;
+    margin: 0;
+}
+.form{
+    border: 1px solid red;
+    margin: 4em auto;
+    width: 70vw;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+}
+
+.form__label{
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+.form__select{
+    width: 250px;
+    height: 30px;
+}
+.form__input{
+    width: 200px;
+    height: 20px;
+}
+
+.form__submit{
+    width: 150px;
+    padding: 4px;
+    border: none;
+    border-radius: .2rem;
+    background-color: rgba(75, 192, 192, 0.2);
+    border: 1px solid  rgb(75, 192, 192);
+    cursor: pointer;                
+}
+
+.form__submit:hover{
+    background-color:  rgb(75, 192, 192);
+}
+
+.chart{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 70vw;
+
+    background-color: #fff;
+}
