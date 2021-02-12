@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header class="header">
+        <div id="header__content">
+            <img src="./img/logo.jpeg" alt="Logo Cofudep" class="header__img">
+        </div>
+    </header>
+
     <form id="form" class="form">
         <div class="form__field">
             <label for="tipoSimulacion" class="form__label">Tipo de simulación</label>
@@ -19,7 +25,7 @@
 
         <div class="form__field">
             <label for="monto" class="form__label">Monto</label>
-            <input type="number" name="monto" class="form__input" min="50000" max="5000000" id="monto">
+            <input type="number" name="monto" class="form__input" min="50000" max="5000000" title="El monto minimo de ahorro es 50.000" id="monto">
         </div>
         <input type="submit" id="calcular" name="submit" class="form__submit" value="Calcular">
     </form>
