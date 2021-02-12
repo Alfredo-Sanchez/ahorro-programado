@@ -19,7 +19,7 @@ form.addEventListener('submit', (e)=>{
     let montoAhorro = [];
     let montoTotal = [];
 
-    if (tipoSimulacion !== 1 && monto > 50000){
+    if (tipoSimulacion !== 1 && monto >= 50000){
         montoGlobal = monto
         if(tipoSimulacion === "mensual"){
     
