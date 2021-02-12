@@ -10,7 +10,6 @@ form.addEventListener('submit', (e)=>{
     sessionStorage.setItem('tipoSimulacion', form.tipoSimulacion.value)
 
     const monto = parseInt(sessionStorage.getItem('montoAhorro'))
-          montoGlobal = monto
     const tipoSimulacion = sessionStorage.getItem('tipoSimulacion')
 
     const meses = [12, 18, 24, 36, 48, 60]
@@ -20,27 +19,30 @@ form.addEventListener('submit', (e)=>{
     let montoAhorro = [];
     let montoTotal = [];
 
-    if(tipoSimulacion === "mensual"){
-
-       let intereses = meses.map( ( mes, index ) => {
-           return parseInt(monto*mes*dias[index]*tasas[index]/36500)
-       })
-
-       montoAhorro = meses.map( mes => mes*monto)
-
-       montoTotal = meses.map( (mes, index) => mes*monto + intereses[index])
-       
-       ahorroGlobal = montoTotal
-
-    }else if (tipoSimulacion === "total"){// sera cuando elijan el monto total que desean tener a los 60 meses
-
+    if (tipoSimulacion !== 1 && monto > 50000){
+        montoGlobal = monto
+        if(tipoSimulacion === "mensual"){
+    
+           let intereses = meses.map( ( mes, index ) => {
+               return parseInt(monto*mes*dias[index]*tasas[index]/36500)
+           })
+    
+           montoAhorro = meses.map( mes => mes*monto)
+    
+           montoTotal = meses.map( (mes, index) => mes*monto + intereses[index])
+    
+           ahorroGlobal = montoTotal
+    
+        }else if (tipoSimulacion === "total"){// sera cuando elijan el monto total que desean tener a los 60 meses
+    
+        }
+    
+        renderCharts();  
+        montoAhorro = [];
+        montoTotal = [];
+        console.log(montoAhorro, montoTotal)
+        form.reset();// resetea los campos del formulario luego de cargar el renderChart()
     }
-
-    renderCharts();  
-    montoAhorro = [];
-    montoTotal = [];
-    console.log(montoAhorro, montoTotal)
-    form.reset();// resetea los campos del formulario luego de cargar el renderChart()
 })
 
 
