@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahorro programado</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="./img/icon.ico" type="image/x-icon">
 </head>
 <body>
     <header class="header">
@@ -25,7 +26,7 @@
 
         <div class="form__field">
             <label for="monto" class="form__label">Monto</label>
-            <input type="number" name="monto" class="form__input" min="50000" max="5000000" title="El monto minimo de ahorro es 50.000" id="monto">
+            <input type="text" name="monto" class="form__input"  title="El monto minimo de ahorro es 50.000" id="monto">
         </div>
         <input type="submit" id="calcular" name="submit" class="form__submit" value="Calcular">
     </form>
@@ -34,6 +35,9 @@
     <div class="chart" id="chartContent">
         <canvas id="chart"></canvas>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>    
+    <script type="text/javascript" src="https://rawcdn.githack.com/franz1628/validacionKeyCampo/bce0e442ee71a4cf8e5954c27b44bc88ff0a8eeb/validCampoFranz.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <script src="scripts.js"></script>    
 </body>

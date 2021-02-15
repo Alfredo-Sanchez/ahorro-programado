@@ -1,5 +1,62 @@
 
+
+$(function(){
+    //Para escribir solo numeros    
+    $('#monto').validCampoFranz('0123456789');
+});
+
+
 const form = document.getElementById('form')
+const montoNumber = document.getElementById('monto')
+
+// function soloNumeros(e){
+//     let key = e.keyCode || e.wich;
+//     console.log(key)
+//     let tecla = String.fromCharCode(key).toLowerCase();
+//     console.log(tecla)
+//     let numeros = "áéíóúabcdefghijklmnñopqrstuvwxyz";
+//     let especiales = [8, 37, 39, 46];
+ 
+//     let tecla_especial = false
+//      for(var i in especiales) {
+//          if(key == especiales[i]) {
+//              tecla_especial = true;
+//              break;
+//          }
+//      }
+ 
+//      if(numeros.indexOf(tecla) == -1 && !tecla_especial){
+//          return false;
+//      }
+// }
+
+// montoNumber.addEventListener('keypress', (e) =>{
+//     soloNumeros(e)
+// })
+
+function formatearNumeros(e){    
+    let entrada = e.target.value.replaceAll('.', '');
+        entrada = entrada.split('').reverse();
+    let salida = []
+    let aux = ''
+    let paginador = Math.ceil(entrada.length / 3);
+
+    for(let i = 0; i < paginador; i++){
+        for(let j = 0; j < 3; j++){
+            if(entrada[j + (i*3)] != undefined){
+                aux += entrada[j + (i*3)];
+            }
+        }
+        salida.push(aux);
+        aux = '';
+
+        e.target.value = salida.join('.').split('').reverse().join('');
+    }    
+}
+
+montoNumber.addEventListener('keyup', (e) =>{
+    formatearNumeros(e)
+})
 
 let montoGlobal = []
 let ahorroGlobal = []
@@ -7,7 +64,7 @@ let ahorroGlobal = []
 
 form.addEventListener('submit', (e)=>{
     e.preventDefault()
-    sessionStorage.setItem('montoAhorro', form.monto.value)
+    sessionStorage.setItem('montoAhorro', form.monto.value.replaceAll('.',''))
     sessionStorage.setItem('tipoSimulacion', form.tipoSimulacion.value)
 
     const monto = parseInt(sessionStorage.getItem('montoAhorro'))
@@ -21,7 +78,7 @@ form.addEventListener('submit', (e)=>{
     let montoTotal = [];
 
     if (tipoSimulacion !== '1' && monto >= 50000){
-        montoGlobal = monto
+        montoGlobal = form.monto.value
         if(tipoSimulacion === "mensual"){
     
            let intereses = meses.map( ( mes, index ) => {
