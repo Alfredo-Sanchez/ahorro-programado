@@ -81,17 +81,15 @@ function totalCaseChart(ctx){
             },
             layout:{
                  padding:{
-                    //  right: 100,
-                    //  left: 100
+                    right: 10,
+                    left: 10,
                     bottom: 50
                  }
              }
         }
         
     });
-    // setTimeout(() => {
-    //     chart.destroy();
-    // }, 10000);
+
  }
 
  function renderCharts(){
