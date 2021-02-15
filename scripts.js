@@ -1,7 +1,6 @@
 
 
 $(function(){
-    //Para escribir solo numeros    
     $('#monto').validCampoFranz('0123456789');
 });
 
@@ -54,9 +53,12 @@ function formatearNumeros(e){
     }    
 }
 
-montoNumber.addEventListener('keyup', (e) =>{
-    formatearNumeros(e)
-})
+if (screen.width > 500){
+    monto.setAttribute('type', 'text') // para poder formatear el input cuando exista el evento keypress
+    montoNumber.addEventListener('keyup', (e) =>{
+        formatearNumeros(e)
+    })
+}
 
 let montoGlobal = []
 let ahorroGlobal = []
