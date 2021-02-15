@@ -1,3 +1,8 @@
+*{
+    box-sizing: border-box;
+
+}
+
 body{
     background-color: #ddd;
     margin: 0;
@@ -34,7 +39,7 @@ body{
     position: relative;
     z-index: 1;
     border: 1px solid var(--borderColor);
-    margin: 150px auto;
+    margin: 150px auto 70px auto;
     width: 70vw;
     height: 150px;
     display: flex;
@@ -43,21 +48,32 @@ body{
     background-color: var(--white);
 }
 
+
+
 .form__label{
     font-size: 1.2em;
     margin-right: 5px;
 }
 
 .form__select{
+    font-size: 1.2em;
     width: 250px;
     height: 30px;
+    border: none;
+    border: 1px solid black;
+    border-radius: .2rem;
 }
 .form__input{
     width: 200px;
-    height: 20px;
+    height: 30px;
+    border: none;
+    font-size: 1.2em;
+    border: 1px solid black;
+    border-radius: .2rem;
 }
 
 .form__submit{
+    font-size: 1.2em;
     width: 150px;
     padding: 4px;
     border: none;
@@ -75,6 +91,72 @@ body{
     margin-right: auto;
     margin-left: auto;
     max-width: 70vw;
-
+    height: 600px;
     background-color: var(--white);
+}
+
+/* MEDIAS QUERIES  */
+
+@media screen and (max-width: 360px){
+
+    .header{
+        height: 60px;
+    }
+
+    .header__content{
+        height: 60px;
+    }
+    .header__img{
+        width: 50%;
+        height: 60px;
+    }
+
+    .form{
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 16px;
+        max-width: 360px;
+        width: 360px;    
+        height: 200px;
+        margin: 120px 0 70px 0;
+    }
+
+    .form__field{
+        /* border: 1px solid red;    */
+        display: flex;
+        flex-direction: column;
+        padding-left: 5px;
+        width: 350px;
+    }
+
+    .form__label{
+        font-size: 16px;
+        padding-bottom: 5px;
+    }
+
+    .form__select{
+        width: 100%;
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    .form__input{
+        width: 100%;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .form__submit{
+        width: 200px;
+        padding: 6px;
+        font-size: 14px;
+        margin: 0 auto;
+    }
+
+    .chart{
+        width: 350px;
+        max-width: 360px;   
+        height: 500px;
+        padding-bottom: 50px;
+    }
 }

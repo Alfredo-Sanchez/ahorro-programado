@@ -64,6 +64,7 @@ function totalCaseChart(ctx){
             ]
         },
         options: {
+            maintainAspectRatio: false,
             scales:{
              xAxes: [{
                  gridLines:{
@@ -74,7 +75,7 @@ function totalCaseChart(ctx){
             title: {
                 display: true,
                 text: `Si ahorrás Gs. ${montoGlobal} por mes, obtendrás:`,
-                fontSize: 30,
+                fontSize: 20,
                 padding: 30,
                 fontColor: '#000'
             },
