@@ -1,4 +1,6 @@
 
+import { calculoIntereses } from './calculo-intereses.js'
+import { formatearNumeros } from './formatear-numeros.js'
 
 $(function(){
     $('#monto').validCampoFranz('0123456789');
@@ -33,28 +35,13 @@ const montoNumber = document.getElementById('monto')
 //     soloNumeros(e)
 // })
 
-function formatearNumeros(e){    
-    let entrada = e.target.value.replaceAll('.', '');
-        entrada = entrada.split('').reverse();
-    let salida = []
-    let aux = ''
-    let paginador = Math.ceil(entrada.length / 3);
 
-    for(let i = 0; i < paginador; i++){
-        for(let j = 0; j < 3; j++){
-            if(entrada[j + (i*3)] != undefined){
-                aux += entrada[j + (i*3)];
-            }
-        }
-        salida.push(aux);
-        aux = '';
-
-        e.target.value = salida.join('.').split('').reverse().join('');
-    }    
-}
 
 if (screen.width > 500){
-    monto.setAttribute('type', 'text') // para poder formatear el input cuando exista el evento keypress
+    monto.setAttribute('type', 'text') // 
+    monto.setAttribute('min', '50000') // para poder formatear el input cuando exista el evento keypress
+    monto.setAttribute('max', '5000000') // 
+    monto.setAttribute('title', 'El ahorro minimo es de 50.000 y el maximo de 5.000.000') // para poder formatear el input cuando exista el evento keypress
     montoNumber.addEventListener('keyup', (e) =>{
         formatearNumeros(e)
     })
@@ -72,36 +59,17 @@ form.addEventListener('submit', (e)=>{
     const monto = parseInt(sessionStorage.getItem('montoAhorro'))
     const tipoSimulacion = sessionStorage.getItem('tipoSimulacion')
 
-    const meses = [12, 18, 24, 36, 48, 60]
-    const dias = [365, 540,  730, 1095, 1460, 1825 ]
-    const tasas = [4, 5, 6, 6.5, 7, 7.5]
-
-    let montoAhorro = [];
-    let montoTotal = [];
-
     if (tipoSimulacion !== '1' && monto >= 50000){
         montoGlobal = form.monto.value
         if(tipoSimulacion === "mensual"){
-    
-           let intereses = meses.map( ( mes, index ) => {
-               return parseInt(monto*mes*dias[index]*tasas[index]/36500)
-           })
-    
-           montoAhorro = meses.map( mes => mes*monto)
-    
-           montoTotal = meses.map( (mes, index) => mes*monto + intereses[index])
-    
-           ahorroGlobal = montoTotal
-    
+         const resultado =   calculoIntereses(monto);
+         ahorroGlobal = resultado;
         }else if (tipoSimulacion === "total"){// sera cuando elijan el monto total que desean tener a los 60 meses
     
         }
     
         renderCharts();  
-        montoAhorro = [];
-        montoTotal = [];
-        console.log(montoAhorro, montoTotal)
-        form.reset();// resetea los campos del formulario luego de cargar el renderChart()
+        form.reset();
     }
 })
 
