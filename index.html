@@ -17,16 +17,17 @@
     <form id="form" class="form">
         <div class="form__field">
             <label for="tipoSimulacion" class="form__label">Tipo de simulación</label>
-            <select name="tipoSimulacion" id="tipoSimulacion" class="form__select">
+            <input type="text" name="tipoSimulacion" id="tipoSimulacion" class="form__input" placeholder="Ahorro Mensual" disabled>
+            <!-- <select name="tipoSimulacion" id="tipoSimulacion" class="form__select">
                 <option value="1" disabled selected>Elija una opción</option>
                 <option value="mensual">Ingresa el ahorro mensual</option>
                 <option value="total">Ingresa el ahorro total</option>
-            </select>
+            </select> -->
         </div>
 
         <div class="form__field">
             <label for="monto" class="form__label">Monto</label>
-            <input type="number" name="monto" class="form__input"  title="El monto minimo de ahorro es 50.000" id="monto">
+            <input type="number" name="monto" class="form__input"  title="El monto minimo de ahorro es 50.000" id="monto" placeholder="Monto desde 50.000 Gs">
         </div>
         <input type="submit" id="calcular" name="submit" class="form__submit" value="Calcular">
     </form>
@@ -42,7 +43,6 @@
                 <p class="meses">Meses</p>
                 <ul>
                     <li>12M</li>
-                    <li>18M</li>
                     <li>24M</li>
                     <li>36M</li>
                     <li>48M</li>
@@ -50,25 +50,13 @@
                 </ul>
             </div>
             <div class="grid__tasas">
-                <p class="tan">TAN =</p>
+                <p class="tan">Tasas  </p>
                 <ul>
-                    <li>4,0%</li>
                     <li>5,0%</li>
                     <li>6,0%</li>
                     <li>6,5%</li>
                     <li>7,0%</li>
-                    <li>7,5%</li>
-                </ul>
-            </div>
-            <div class="grid__tasas">
-                <p class="tae">TAE =</p>
-                <ul>
-                    <li>4,0%</li>
-                    <li>5,0%</li>
-                    <li>6,0%</li>
-                    <li>6,5%</li>
-                    <li>7,0%</li>
-                    <li>7,5%</li>
+                    <li>8,0%</li>
                 </ul>
             </div>
         </div>

@@ -1,7 +1,7 @@
 
  function calculoIntereses(monto){
   const dias = 30
-  const tasas = [4, 5, 6, 6.5, 7, 7.5]
+  const tasas = [ 5, 6, 6.5, 7, 8]
   
   let montoAcumulado = monto
   let interesAcumulado = 0
@@ -34,20 +34,20 @@
           }   
          break;
         
-      case 18:
-        if(contador === 1){
-          arrayCiclos.push(interesAcumulado)
-          montoAhorradoPorTramos.push(montoAcumulado + arrayCiclos[arrayCiclos.length -1])
-          index += 1
-          contador += 1
-          i = 0
-          arrayIntereses = []
-          montoAcumulado = 0
-          interesAcumulado = 0
-         }
-        break;
+      // case 18:
+      //   if(contador === 1){
+      //     arrayCiclos.push(interesAcumulado)
+      //     montoAhorradoPorTramos.push(montoAcumulado + arrayCiclos[arrayCiclos.length -1])
+      //     index += 1
+      //     contador += 1
+      //     i = 0
+      //     arrayIntereses = []
+      //     montoAcumulado = 0
+      //     interesAcumulado = 0
+      //    }
+      //   break;
      case 24:
-        if(contador === 2){
+        if(contador === 1){
           arrayCiclos.push(interesAcumulado)
            montoAhorradoPorTramos.push(montoAcumulado + arrayCiclos[arrayCiclos.length -1])
           index += 1
@@ -59,7 +59,7 @@
         break;
         
      case 36:
-        if(contador === 3){
+        if(contador === 2){
           arrayCiclos.push(interesAcumulado)
           montoAhorradoPorTramos.push(montoAcumulado + arrayCiclos[arrayCiclos.length -1])
           index += 1
@@ -71,7 +71,7 @@
         break;
         
     case 48:
-        if(contador === 4){
+        if(contador === 3){
           arrayCiclos.push(interesAcumulado)
            montoAhorradoPorTramos.push(montoAcumulado + arrayCiclos[arrayCiclos.length -1])
           index += 1
@@ -83,7 +83,7 @@
         break;
         
     case 60:
-        if(contador === 5){
+        if(contador === 4){
           arrayCiclos.push(interesAcumulado)
           montoAhorradoPorTramos.push(montoAcumulado + arrayCiclos[arrayCiclos.length -1])
           contador += 1

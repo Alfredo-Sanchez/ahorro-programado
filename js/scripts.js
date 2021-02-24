@@ -8,7 +8,7 @@ $(function(){
 
 
 const form = document.getElementById('form')
-const montoNumber = document.getElementById('monto')
+let montoNumber = document.getElementById('monto')
 
 // function soloNumeros(e){
 //     let key = e.keyCode || e.wich;
@@ -59,14 +59,10 @@ form.addEventListener('submit', (e)=>{
     const monto = parseInt(sessionStorage.getItem('montoAhorro'))
     const tipoSimulacion = sessionStorage.getItem('tipoSimulacion')
 
-    if (tipoSimulacion !== '1' && monto >= 50000){
+    if (monto >= 50000){
         montoGlobal = form.monto.value
-        if(tipoSimulacion === "mensual"){
          const resultado =   calculoIntereses(monto);
          ahorroGlobal = resultado;
-        }else if (tipoSimulacion === "total"){// sera cuando elijan el monto total que desean tener a los 60 meses
-    
-        }
     
         renderCharts();  
         form.reset();
@@ -78,7 +74,7 @@ function totalCaseChart(ctx){
         const chart =  new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["12 meses", '18 meses','24 meses', '36 meses ', '48 meses','60 meses'],
+            labels: ["12 meses",'24 meses', '36 meses ', '48 meses','60 meses'],
             datasets: [
                 {
                     label: 'Ahorros',
