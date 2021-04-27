@@ -12,10 +12,6 @@ let montoNumber = document.getElementById('monto')
 
 
 if (screen.width > 500){
-    montoNumber.setAttribute('type', 'text') // 
-    montoNumber.setAttribute('min', '50000') // para poder formatear el input cuando exista el evento keypress
-    montoNumber.setAttribute('max', '5000000') // 
-    montoNumber.setAttribute('title', 'El ahorro minimo es de 50.000 y el maximo de 5.000.000') // para poder formatear el input cuando exista el evento keypress
     montoNumber.addEventListener('keyup', (e) =>{
         formatearNumeros(e)
     })
@@ -33,13 +29,19 @@ form.addEventListener('submit', (e)=>{
     const monto = parseInt(sessionStorage.getItem('montoAhorro'))
     const tipoSimulacion = sessionStorage.getItem('tipoSimulacion')
 
-    if (monto >= 50000){
+    if (monto >= 50000 && monto <= 5000000){
         montoGlobal = form.monto.value
          const resultado =   calculoIntereses(monto);
          ahorroGlobal = resultado;
     
         renderCharts();  
         form.reset();
+    }else{
+        if(monto < 50000){
+            alert('El monto minimo es de 50.000 Gs.')
+        }else if(monto > 5000000){
+            alert('El monto maximo es de 5.000.000 Gs.')
+        }
     }
 })
 
