@@ -10,38 +10,12 @@ $(function(){
 const form = document.getElementById('form')
 let montoNumber = document.getElementById('monto')
 
-// function soloNumeros(e){
-//     let key = e.keyCode || e.wich;
-//     console.log(key)
-//     let tecla = String.fromCharCode(key).toLowerCase();
-//     console.log(tecla)
-//     let numeros = "áéíóúabcdefghijklmnñopqrstuvwxyz";
-//     let especiales = [8, 37, 39, 46];
- 
-//     let tecla_especial = false
-//      for(var i in especiales) {
-//          if(key == especiales[i]) {
-//              tecla_especial = true;
-//              break;
-//          }
-//      }
- 
-//      if(numeros.indexOf(tecla) == -1 && !tecla_especial){
-//          return false;
-//      }
-// }
-
-// montoNumber.addEventListener('keypress', (e) =>{
-//     soloNumeros(e)
-// })
-
-
 
 if (screen.width > 500){
-    monto.setAttribute('type', 'text') // 
-    monto.setAttribute('min', '50000') // para poder formatear el input cuando exista el evento keypress
-    monto.setAttribute('max', '5000000') // 
-    monto.setAttribute('title', 'El ahorro minimo es de 50.000 y el maximo de 5.000.000') // para poder formatear el input cuando exista el evento keypress
+    montoNumber.setAttribute('type', 'text') // 
+    montoNumber.setAttribute('min', '50000') // para poder formatear el input cuando exista el evento keypress
+    montoNumber.setAttribute('max', '5000000') // 
+    montoNumber.setAttribute('title', 'El ahorro minimo es de 50.000 y el maximo de 5.000.000') // para poder formatear el input cuando exista el evento keypress
     montoNumber.addEventListener('keyup', (e) =>{
         formatearNumeros(e)
     })
