@@ -7,6 +7,7 @@ body{
     background-color: #ddd;
     margin: 0;
     height: 100vh;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 :root{
@@ -49,10 +50,10 @@ body{
 }
 
 
-
 .form__label{
-    /* font-size: 1.2em; */
+   font-weight: 600;
     margin-right: 5px;
+    margin-bottom: 10px;
 }
 
 .form__select{
@@ -63,13 +64,22 @@ body{
     border: 1px solid black;
     border-radius: .2rem;
 }
+
 .form__input{
+    margin-top: 7px;
     width: 200px;
     height: 30px;
     border: none;
-    /* font-size: 1.2em; */
-    border: 1px solid black;
+    outline: none;
+    font-weight: 200;
+    background-color: #fff;
+    box-shadow: 3px 3px 10px #b3b3d8;
+    /* border: 1px solid black; */
     border-radius: .2rem;
+}
+
+.form__input--disabled{
+    background-color: #eee;
 }
 
 .form__submit{
@@ -80,6 +90,8 @@ body{
     border-radius: .2rem;
     background-color: rgba(75, 192, 192, 0.2);
     border: 1px solid  var(--borderColor);
+    font-weight: 600;
+    box-shadow: 3px 3px 10px #b3b3d8;
     cursor: pointer;                
 }
 
@@ -145,7 +157,7 @@ body{
     text-align: center;
     font-size: 14px;
     line-height: 1.5;
-    width: 70%;
+    width: 85%;
 }
 
 

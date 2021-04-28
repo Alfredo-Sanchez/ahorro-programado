@@ -6,6 +6,8 @@
     <title>Ahorro programado</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="./img/icon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -13,11 +15,18 @@
             <img src="./img/logo.png" alt="Logo Cofudep" class="header__img">
         </div>
     </header>
+    <div class="notification">
+        <div class="notification__details">
+            <div class="notification__icon"></div>
+            <div class="notification__text"></div>
+        </div>
+        <div class="notification__action"></div>
+    </div>
     
     <form id="form" class="form">
         <div class="form__field">
             <label for="tipoSimulacion" class="form__label">Tipo de simulación</label>
-            <input type="text" name="tipoSimulacion" id="tipoSimulacion" class="form__input" placeholder="Ahorro Mensual" disabled>
+            <input type="text" name="tipoSimulacion" id="tipoSimulacion" class="form__input form__input--disabled" placeholder="Ahorro Mensual" disabled>
             <!-- <select name="tipoSimulacion" id="tipoSimulacion" class="form__select">
                 <option value="1" disabled selected>Elija una opción</option>
                 <option value="mensual">Ingresa el ahorro mensual</option>
@@ -27,7 +36,7 @@
 
         <div class="form__field">
             <label for="monto" class="form__label">Monto</label>
-            <input type="text" name="monto" class="form__input" id="monto" placeholder="Monto desde 50.000 Gs">
+            <input type="text" name="monto" class="form__input" id="monto" placeholder="Ingrese el monto" required>
         </div>
         <input type="submit" id="calcular" name="submit" class="form__submit" value="Calcular">
     </form>
