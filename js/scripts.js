@@ -13,18 +13,10 @@ const notification = document.getElementById('notification')
 const modaCloseButton = document.getElementById('modal-close-button')
 const notificationText = document.getElementById('notification-text')
 
+montoNumber.addEventListener('keyup', (e) =>{
+    formatearNumeros(e)
+})
 
-if (screen.width > 500){
-    montoNumber.addEventListener('keyup', (e) =>{
-        formatearNumeros(e)
-    })
-}
-
-if (screen.width < 500){
-    montoNumber.addEventListener('keyup', (e) =>{
-        formatearNumeros(e)
-    })
-}
 
 let montoGlobal = []
 let ahorroGlobal = []

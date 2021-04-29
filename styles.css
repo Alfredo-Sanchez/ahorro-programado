@@ -5,6 +5,9 @@
 
 body{
     background-color: #ddd;
+    background-image: url("./img/bg-pattern-top-desktop.svg"), url("./img/bg-pattern-bottom-desktop.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position:  left top, right 100vh;
     margin: 0;
     height: 100vh;
     font-family: 'IBM Plex Sans', sans-serif;
@@ -12,7 +15,7 @@ body{
 
 :root{
     --white: rgba(255, 255, 255, 0.8);
-    --borderColor: rgb(75, 192, 192);
+    --borderColor: #4bc0c0;
 }
 
 .header{
