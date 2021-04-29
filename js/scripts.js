@@ -19,9 +19,9 @@ montoNumber.addEventListener('keyup', (e) =>{
     formatearNumeros(e)
 })
 
-if(screen.width < 500){
-    montoNumber.setAttribute('type', 'number')
-}
+// if(screen.width < 500){
+//     montoNumber.setAttribute('type', 'number')
+// }
 
 let montoGlobal = []
 let ahorroGlobal = []
