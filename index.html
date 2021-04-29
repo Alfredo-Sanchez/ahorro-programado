@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="./img/icon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 </head>
 <body>
     <header class="header">
@@ -15,23 +16,20 @@
             <img src="./img/logo.png" alt="Logo Cofudep" class="header__img">
         </div>
     </header>
-    <div class="notification">
+    <div class="notification" id="notification">
         <div class="notification__details">
-            <div class="notification__icon"></div>
-            <div class="notification__text"></div>
+            <div class="notification__icon"><i class="fas fa-exclamation-circle"></i></div>
+            <p class="notification__text" id="notification-text"></p>
         </div>
-        <div class="notification__action"></div>
+        <div class="notification__action">
+            <div class="notification__close"><i class="fas fa-times" id="modal-close-button"></i></div>
+        </div>
     </div>
     
     <form id="form" class="form">
         <div class="form__field">
             <label for="tipoSimulacion" class="form__label">Tipo de simulación</label>
             <input type="text" name="tipoSimulacion" id="tipoSimulacion" class="form__input form__input--disabled" placeholder="Ahorro Mensual" disabled>
-            <!-- <select name="tipoSimulacion" id="tipoSimulacion" class="form__select">
-                <option value="1" disabled selected>Elija una opción</option>
-                <option value="mensual">Ingresa el ahorro mensual</option>
-                <option value="total">Ingresa el ahorro total</option>
-            </select> -->
         </div>
 
         <div class="form__field">

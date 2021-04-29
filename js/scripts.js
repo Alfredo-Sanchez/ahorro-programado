@@ -9,6 +9,9 @@ $(function(){
 
 const form = document.getElementById('form')
 let montoNumber = document.getElementById('monto')
+const notification = document.getElementById('notification')
+const modaCloseButton = document.getElementById('modal-close-button')
+const notificationText = document.getElementById('notification-text')
 
 
 if (screen.width > 500){
@@ -38,12 +41,28 @@ form.addEventListener('submit', (e)=>{
         form.reset();
     }else{
         if(monto < 50000){
-            alert('El monto minimo es de 50.000 Gs.')
+            notificationText.innerHTML = `<strong>Monto mínimo aceptado:</strong> <br> es de 50.000 Gs.`
+            notification.classList.add('notification--show')
+            modalClose()
         }else if(monto > 5000000){
-            alert('El monto maximo es de 5.000.000 Gs.')
+           notificationText.innerHTML = `<strong>Monto máximo aceptado:</strong> <br> es de 5.000.000 Gs.`
+            notification.classList.add('notification--show')
+            modalClose()
         }
     }
 })
+
+modaCloseButton.addEventListener('click', (e)=>{
+    notification.classList.remove('notification--show')
+}) 
+
+function modalClose (){
+    if(notification.classList.contains('notification--show')){
+        setTimeout(() => {
+            notification.classList.remove('notification--show')
+        }, 5000);
+    }
+}
 
 
 function totalCaseChart(ctx){
