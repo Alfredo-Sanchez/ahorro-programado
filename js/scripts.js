@@ -2,10 +2,12 @@
 import { calculoIntereses } from './calculo-intereses.js'
 import { formatearNumeros } from './formatear-numeros.js'
 
-$(function(){
-    $('#monto').validCampoFranz('0123456789');
-});
 
+if(screen.width > 500){
+    $(function(){
+        $('#monto').validCampoFranz('0123456789');
+    });
+}
 
 const form = document.getElementById('form')
 let montoNumber = document.getElementById('monto')
