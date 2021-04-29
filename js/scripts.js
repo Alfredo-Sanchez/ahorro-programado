@@ -19,9 +19,9 @@ montoNumber.addEventListener('keyup', (e) =>{
 })
 
 if(screen.width < 500){
-    montoNumber.addEventListener('keypress', (e)=>{
+    montoNumber.addEventListener('keyup', (e)=>{
         // console.log(e.target.value.replace(/\s+|\-|[A-Za-z]/g, ''))
-        e.target.value.replace(/\s+|\-|[A-Za-z]/g, '')
+        e.target.value.replace(/\s+|\-|\[A-Za-z]/g, '')
     })
 }
 
