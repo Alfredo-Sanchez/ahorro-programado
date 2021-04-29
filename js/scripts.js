@@ -3,11 +3,10 @@ import { calculoIntereses } from './calculo-intereses.js'
 import { formatearNumeros } from './formatear-numeros.js'
 
 
-if(screen.width > 500){
-    $(function(){
-        $('#monto').validCampoFranz('0123456789');
-    });
-}
+$(function(){
+    $('#monto').validCampoFranz('0123456789');
+});
+
 
 const form = document.getElementById('form')
 let montoNumber = document.getElementById('monto')
@@ -19,9 +18,12 @@ montoNumber.addEventListener('keyup', (e) =>{
     formatearNumeros(e)
 })
 
-// if(screen.width < 500){
-//     montoNumber.setAttribute('type', 'number')
-// }
+if(screen.width < 500){
+    montoNumber.addEventListener('keypress', (e)=>{
+        // console.log(e.target.value.replace(/\s+|\-|[A-Za-z]/g, ''))
+        e.target.value.replace(/\s+|\-|[A-Za-z]/g, '')
+    })
+}
 
 let montoGlobal = []
 let ahorroGlobal = []
