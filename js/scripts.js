@@ -19,8 +19,9 @@ if (screen.width > 500){
         formatearNumeros(e)
     })
 }
+
 if (screen.width < 500){
-    montoNumber.addEventListener('touchend', (e) =>{
+    montoNumber.addEventListener('keyup', (e) =>{
         formatearNumeros(e)
     })
 }
