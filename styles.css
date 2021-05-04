@@ -31,6 +31,8 @@ body{
 
 .header__content{
     height: 70px;
+    display: flex;
+    align-items: center;
 }
 
 .header__img{
